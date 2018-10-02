@@ -72,12 +72,16 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intentRedirecionar);
             finish();
         }
+        else if(opcaoMenu.equals("Consultar")){
+
+            intentRedirecionar = new Intent(this, ConsultarActivity.class);
+            startActivity(intentRedirecionar);
+            finish();
+        }
         else
             Toast.makeText(getApplicationContext(), "Opção inválida!", Toast.LENGTH_SHORT).show();
 
     }
-
-
 
     //VINCULA O COMPONENTE DA NOSSA TELA AO OBJETO DA NOSSA ATIVIDADE
     protected void CriarComponentes(){

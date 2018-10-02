@@ -7,5 +7,5 @@
         <string name="sexo_obrigatorio">O sexo é de preenchimento obrigatório!</string>
         <string name="data_nascimento_obrigatorio">A data de nascimento é de preenchimento obrigatório!</string>
         <string name="registro_salvo_sucesso">Registro salvo com sucesso!</string>
-    </resources>
+</resources>
 

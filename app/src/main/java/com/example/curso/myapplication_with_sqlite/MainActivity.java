@@ -1,3 +1,4 @@
+//package ciceroednilson.com.br.apppessoa;
 package com.example.curso.myapplication_with_sqlite;
 
 import android.os.Bundle;
@@ -9,37 +10,54 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.example.curso.myapplication_with_sqlite.R;
+
 public class MainActivity extends AppCompatActivity {
 
+    //DECLARANDO UM OBJETO LISTVIEW
+    ListView listViewOpcoes;
+
+    //MÉTODO onCreate EXECUTADO NA INICIALIZAÇÃO DA ACTIVITY
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
+        //DETERMINA O CONTEÚDO DA NOSSA ACTIVITY
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-       ;
+
+        /*CARREGA O MÉTODO DE CRIAÇÃO DOS COMPONENTES*/
+        this.CriarComponentes();
+
+        /*CARREGA AS OPÇÕES DA LISTA*/
+        this.CarregaOpcoesLista();
+    }
+    //VINCULA O COMPONENTE DA NOSSA TELA AO OBJETO DA NOSSA ATIVIDADE
+    protected void CriarComponentes(){
+
+        //VINCULANDO A LISTA DA TELA AO LISTVIEW QUE DECLARAMOS
+        listViewOpcoes = (ListView) this.findViewById(R.id.listViewOpcoes);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+    //CRIA A OPÇÕES DA NOSSA LISTA E ADICIONA AO LISTVIEW DA NOSSA TELA.
+    protected  void CarregaOpcoesLista(){
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        String[] itens = new String[2];
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        itens[0] = "Cadastrar";
+        itens[1] = "Consultar";
 
-        return super.onOptionsItemSelected(item);
+        ArrayAdapter<String> arrayItens = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,itens);
+
+
+        listViewOpcoes.setAdapter(arrayItens);
+
     }
 }

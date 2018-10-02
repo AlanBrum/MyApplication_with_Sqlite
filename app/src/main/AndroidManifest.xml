@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CadastrarActivity" />
-        <activity android:name=".ConsultarActivity"></activity>
+        <activity android:name=".ConsultarActivity" />
+        <activity android:name=".EditarActivity"></activity>
     </application>
 
 </manifest>
